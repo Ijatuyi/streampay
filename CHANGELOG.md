@@ -10,6 +10,10 @@ interface: they are only ever appended to, never renumbered or reused.
 ## [Unreleased]
 
 ### Added
+- OpenSSF Scorecard supply-chain security gate in CI (`.github/workflows/scorecard.yml`
+  and `.github/workflows/ci.yml`) enforcing an immutable 7.0 / 10.0 score floor,
+  token-permission hardening (`contents: read`), action commit SHA pinning, and
+  documented exemptions policy (`docs/SCORECARD.md`, `.github/scorecard-policy.json`).
 - `indexer/` TypeScript service that decodes StreamPay Soroban events into a
   cursor-backed SQLite projection and exposes stream-by-id and address stream
   REST endpoints, with local setup/API documentation.

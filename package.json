@@ -23,7 +23,9 @@
     "dev":         "cd frontend && npm run dev",
 
     "typecheck":   "cd frontend && npm run typecheck",
-    "audit":       "cd frontend && npm audit --omit=dev --audit-level=high",
+    "audit:frontend": "cd frontend && npm audit --omit=dev --audit-level=high",
+    "audit:scorecard": "node scripts/scorecard-gate.mjs",
+    "audit":       "npm run audit:frontend && npm run audit:scorecard",
 
     "errors:check": "cargo run -p streampay-contract --example error_surface_doc && git diff --exit-code docs/ERRORS.md",
     "errors:regen": "cargo run -p streampay-contract --example error_surface_doc",
