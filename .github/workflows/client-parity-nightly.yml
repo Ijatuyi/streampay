@@ -45,6 +45,7 @@ jobs:
       - name: Archive shared parity fixtures
         if: always()
         uses: actions/upload-artifact@65462800fd760344b1a7b4382951275a0abb4808 # v4.3.3
+        uses: actions/upload-artifact@v7
         with:
           name: client-parity-fixtures-${{ github.run_id }}
           path: tests/client-parity/fixtures.json

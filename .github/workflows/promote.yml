@@ -80,6 +80,7 @@ jobs:
 
       - name: Cache cargo
         uses: actions/cache@0c45773b623bea8c8e75f6c82b208c3cf94d9d67 # v4.2.2
+        uses: actions/cache@v6
         with:
           path: |
             ~/.cargo/registry
@@ -114,6 +115,7 @@ jobs:
 
       - name: Upload evidence bundle
         uses: actions/upload-artifact@65462800fd760344b1a7b4382951275a0abb4808 # v4.3.3
+        uses: actions/upload-artifact@v7
         with:
           name: evidence-sandbox-${{ inputs.release_tag }}
           path: evidence/
@@ -181,6 +183,7 @@ jobs:
 
       - name: Upload promotion record
         uses: actions/upload-artifact@65462800fd760344b1a7b4382951275a0abb4808 # v4.3.3
+        uses: actions/upload-artifact@v7
         with:
           name: promotion-testnet-${{ inputs.release_tag }}
           path: |
@@ -260,6 +263,7 @@ jobs:
 
       - name: Upload promotion record
         uses: actions/upload-artifact@65462800fd760344b1a7b4382951275a0abb4808 # v4.3.3
+        uses: actions/upload-artifact@v7
         with:
           name: promotion-mainnet-${{ inputs.release_tag }}
           path: |
@@ -293,6 +297,7 @@ jobs:
       - name: Upload rollback record
         if: ${{ always() }}
         uses: actions/upload-artifact@65462800fd760344b1a7b4382951275a0abb4808 # v4.3.3
+        uses: actions/upload-artifact@v7
         with:
           name: rollback-mainnet-${{ github.run_id }}
           path: deployments/runs/
